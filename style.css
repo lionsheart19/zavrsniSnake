@@ -1,0 +1,110 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: darkred;
+}
+body *{
+    margin: 0;
+    padding: 0;		
+    box-sizing: border-box;
+    font-family: 'Hanalei Fill', cursive;
+}
+a {
+    text-decoration: none;
+}
+div#main {
+    display: grid;
+    grid-template-columns: 1fr 550px 1fr;
+    justify-items: center;
+    height: 550px;
+}
+div#podaci {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 60px;
+}
+    #podaci p {
+        align-self: end;
+    }
+#tezina {
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+    #tezina div {
+        display: flex; 
+        height: 60px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #tezina div button {
+        font-size: 25px;
+        width: 100px;
+        border-radius: 15px;
+    }
+    #tezina div button:hover {
+        height: 1.6em;
+    }
+div#glavni {
+    display: grid;
+    grid-template-columns: 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px;
+    grid-template-rows: 35px 35px 35px 35px 35px 35px 35px 35px 35px 35px;
+    box-shadow: 3px 3px 6px black, -3px -3px 6px black, -3px 3px 6px black, 3px -3px 6px black;
+}
+    div.tabla {
+        width: 35px;
+        height: 35px;
+        /* border: 1px solid rgb(191, 32, 32); */
+    }
+    .vocka {
+        background-color: rgb(21, 235, 21);
+        border-radius: 15px;
+    }
+    .telo {
+        background-color: black;
+        border-radius: 15px;;
+    }
+    .glava {
+        border-radius: 5px;
+    }
+    #pocetak {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+    }
+        #start {
+            font-size: 50px;
+            width: 160px;
+            border-radius: 20px;
+        }
+#hiScore {
+    display: grid;
+    grid-template-rows: 140px 50px 1fr;
+    align-items: center;
+    width: 100%;
+}
+    #prvip {
+        font-size: 30px;
+        align-self: end;
+        justify-self: center;
+    }
+    #drugip {
+        font-size: 23px;
+        justify-self: center;
+    }
+    #hiScore ol {
+        justify-self: center;
+        list-style-type: decimal;
+        width: 200px;
+        align-self: baseline;
+    }
+    .pScore {
+        width: 65px;
+        text-align: left;
+        font-size: 16px;
+        float: left;
+    }
