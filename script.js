@@ -40,30 +40,15 @@ var snake = {
             }
         }
     },
-    tablaDivovi: [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-    ],
-    tablaDogadjaji: [
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ],
+    tablaDivovi: [],
+    tablaDogadjaji: [],
+    init: function(){
+        for (let i=0; i<10; i++)
+            this.tablaDivovi.push([]);
+        for (let i=0; i<10; i++){
+            this.tablaDogadjaji.push([]);
+        }
+    },
     zmijaK: [
         [ 5, 7]
     ],
@@ -297,6 +282,8 @@ snake.epic.onclick = function(){
     snake.tezina = 100;
     ogTezina = 800;
 }
+console.log(snake.tablaDivovi, snake.tablaDogadjaji);
+snake.init();
 snake.htmlDivs();
 snake.prikazi(snake.zmijaK);
 document.querySelector("#start").onclick = snake.zmijaStart.bind(snake);
