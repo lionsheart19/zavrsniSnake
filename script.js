@@ -155,6 +155,9 @@ var snake = {
         var jedanRez = {};
         var vremeIgre = document.querySelector('#time').textContent;
         alert("Igra je gotova! Score: "+ this.poeni+", Vreme: " + vremeIgre);
+        do {
+            jedanRez.ime = prompt("Upisite ime (do sedam slova): ");
+        } while (jedanRez.ime == null || jedanRez.ime.length > 7 || jedanRez.ime.length == 0 );
         jedanRez.bodovi = this.poeni;
         jedanRez.vremeRez = this.vreme.vremeSek;
         this.rezultat.push(jedanRez);
@@ -172,17 +175,11 @@ var snake = {
         this.prikazi(this.zmijaK);
         this.pocetak = true;
         for (var i=0; i<10; i++)
-        for (var j=0; j<14; j++)
-        this.tablaDivovi[i][j].classList.remove('vocka');
+            for (var j=0; j<14; j++)
+                this.tablaDivovi[i][j].classList.remove('vocka');
         this.vreme.pauza();
         this.vreme.reset();
         this.vreme.prikazi();
-        jedanRez.ime = prompt("Upisite ime (do cetiri slova): ");
-        while (jedanRez.ime.length > 4 || jedanRez.ime.length == 0){
-            jedanRez.ime = prompt("Upisite ime (do cetiri slova): ");
-        }
-        if( jedanRez.ime== null || jedanRez.ime.trim() == '' ) 
-            jedanRez.ime="BOT";
     },
     upisiRezultat: function(x){
         x.sort((a,b) => {
@@ -284,7 +281,6 @@ snake.epic.onclick = function(){
     snake.tezina = 100;
     ogTezina = 800;
 }
-console.log(snake.tablaDivovi, snake.tablaDogadjaji);
 snake.init();
 snake.htmlDivs();
 snake.prikazi(snake.zmijaK);
